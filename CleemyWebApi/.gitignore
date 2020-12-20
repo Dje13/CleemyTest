@@ -1,0 +1,10 @@
+CleemyWebApi/packages
+CleemyWebApi/bin
+CleemyWebApi/obj
+CleemyWebApi/CleemyWebApi.csproj.user
+*.log
+CleemyDAL/bin
+CleemyDAL/obj
+CleemyUnitTests/bin
+CleemyUnitTests/obj
+

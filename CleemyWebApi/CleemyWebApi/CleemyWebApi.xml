@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>CleemyWebApi</name>
+    </assembly>
+    <members>
+        <member name="M:CleemyWebApi.Mapping.ExpenseMapper.MapExpenseFromDTO(CleemyWebApi.DTO.ExpenseDTO,CleemyDAL.Models.Expense)">
+            <summary>
+            Map an expense entity from DTO
+            </summary>
+            <param name="expenseDTO"></param>
+            <param name="expense"></param>
+        </member>
+        <member name="M:CleemyWebApi.Mapping.ExpenseMapper.MapDTOFromExpense(CleemyDAL.Models.Expense,CleemyWebApi.DTO.BaseExpenseDTO)">
+            <summary>
+            Map base expense DTO from entity
+            </summary>
+            <param name="expense"></param>
+            <param name="expenseDTO"></param>
+        </member>
+        <member name="M:CleemyWebApi.Mapping.ExpenseMapper.MapDTOForListFromExpense(CleemyDAL.Models.Expense,CleemyWebApi.DTO.ExpenseForListDTO)">
+            <summary>
+            Map Expense DTO fro list from entity
+            </summary>
+            <param name="expense"></param>
+            <param name="expenseDTO"></param>
+        </member>
+        <member name="M:CleemyWebApi.Mapping.Mapper.MapObject(System.Object,System.Object,System.Boolean,System.Collections.Generic.List{System.String})">
+            <summary>
+            Map object with reflexion on scalar attributes
+            </summary>
+            <param name="SourceObject"></param>
+            <param name="TargetObject"></param>
+            <param name="WithId">True :  ID is mapped otherwise ID field is ignored</param>
+            <param name="unMappedField">Exception fields not to be mapped</param>
+        </member>
+        <member name="M:CleemyWebApi.Validator.ExpenseValidator.validateExpense(CleemyWebApi.DTO.ExpenseDTO)">
+            <summary>
+            validate an expense
+            </summary>
+            <param name="myExpense">Expense to validate</param>
+            <returns>List of errors if validation fails, empty list otherwise</returns>
+        </member>
+        <member name="M:CleemyWebApi.Validator.ExpenseValidator.checkDate(CleemyWebApi.DTO.ExpenseDTO,System.Collections.Generic.List{System.String})">
+            <summary>
+            Validate Date value 
+            </summary>
+            <param name="myExpense">Expense to validate</param>
+            <param name="errorMessages">list of error, add new error(s) in teh list check fails</param>
+        </member>
+        <member name="M:CleemyWebApi.Validator.ExpenseValidator.checkComment(CleemyWebApi.DTO.ExpenseDTO,System.Collections.Generic.List{System.String})">
+            <summary>
+            Validate Comment value 
+            </summary>
+            <param name="myExpense">Expense to validate</param>
+            <param name="errorMessages">list of error, add new error(s) in teh list check fails</param>
+        </member>
+        <member name="M:CleemyWebApi.Validator.ExpenseValidator.checkFromDb(CleemyWebApi.DTO.ExpenseDTO,System.Collections.Generic.List{System.String})">
+            <summary>
+            Validate Expense from existing data in db
+            </summary>
+            <param name="myExpense">Expense to validate</param>
+            <param name="errorMessages">list of error, add new error(s) in teh list check fails </param>
+        </member>
+    </members>
+</doc>

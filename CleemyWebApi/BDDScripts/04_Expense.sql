@@ -1,0 +1,20 @@
+CREATE TABLE Expense(
+	id BIGINT IDENTITY(1,1) NOT NULL,
+	dateExpense DATETIME NOT NULL,
+	natureId BIGINT NOT NULL,
+	luccaUserId  BIGINT NOT NULL,
+	currencyId BIGINT NOT NULL,
+	amount DECIMAL NOT NULL,
+	commentExpense VARCHAR(MAX)
+	CONSTRAINT PK_Expense PRIMARY KEY CLUSTERED (id)
+)
+
+ALTER TABLE Expense WITH CHECK ADD CONSTRAINT fk_Expense_curencyId FOREIGN KEY(currencyId)
+REFERENCES Currency (id)
+
+ALTER TABLE Expense WITH CHECK ADD CONSTRAINT fk_Expense_luccaUserId FOREIGN KEY(luccaUserId)
+REFERENCES LuccaUser (id)
+
+
+ALTER TABLE Expense WITH CHECK ADD CONSTRAINT fk_Expense_natureId FOREIGN KEY(natureId)
+REFERENCES Nature (id)
