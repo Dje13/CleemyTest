@@ -4,28 +4,28 @@
         <name>CleemyWebApi</name>
     </assembly>
     <members>
-        <member name="M:CleemyWebApi.Mapping.ExpenseMapper.MapExpenseFromDTO(CleemyWebApi.DTO.ExpenseDTO,CleemyDAL.Models.Expense)">
+        <member name="M:CleemyWebApi.Mapping.ExpenseMapper.mapExpenseFromDTO(CleemyWebApi.DTO.ExpenseDTO,CleemyDAL.Models.Expense)">
             <summary>
             Map an expense entity from DTO
             </summary>
             <param name="expenseDTO"></param>
             <param name="expense"></param>
         </member>
-        <member name="M:CleemyWebApi.Mapping.ExpenseMapper.MapDTOFromExpense(CleemyDAL.Models.Expense,CleemyWebApi.DTO.BaseExpenseDTO)">
+        <member name="M:CleemyWebApi.Mapping.ExpenseMapper.mapDTOFromExpense(CleemyDAL.Models.Expense,CleemyWebApi.DTO.BaseExpenseDTO)">
             <summary>
             Map base expense DTO from entity
             </summary>
-            <param name="expense"></param>
+            <param name="expense">entity with dependancies</param>
             <param name="expenseDTO"></param>
         </member>
-        <member name="M:CleemyWebApi.Mapping.ExpenseMapper.MapDTOForListFromExpense(CleemyDAL.Models.Expense,CleemyWebApi.DTO.ExpenseForListDTO)">
+        <member name="M:CleemyWebApi.Mapping.ExpenseMapper.mapDTOForListFromExpense(CleemyDAL.Models.Expense,CleemyWebApi.DTO.ExpenseForListDTO)">
             <summary>
-            Map Expense DTO fro list from entity
+            Map Expense DTO for list from entity
             </summary>
-            <param name="expense"></param>
+            <param name="expense">entity with dependancies</param>
             <param name="expenseDTO"></param>
         </member>
-        <member name="M:CleemyWebApi.Mapping.Mapper.MapObject(System.Object,System.Object,System.Boolean,System.Collections.Generic.List{System.String})">
+        <member name="M:CleemyWebApi.Mapping.Mapper.mapObject(System.Object,System.Object,System.Boolean,System.Collections.Generic.List{System.String})">
             <summary>
             Map object with reflexion on scalar attributes
             </summary>

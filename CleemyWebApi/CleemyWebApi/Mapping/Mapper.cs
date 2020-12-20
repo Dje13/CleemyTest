@@ -16,7 +16,7 @@ namespace CleemyWebApi.Mapping
         /// <param name="TargetObject"></param>
         /// <param name="WithId">True :  ID is mapped otherwise ID field is ignored</param>
         /// <param name="unMappedField">Exception fields not to be mapped</param>
-        public static void MapObject(object SourceObject, object TargetObject, bool WithId = false, List<string> unMappedField = null)
+        public static void mapObject(object SourceObject, object TargetObject, bool WithId = false, List<string> unMappedField = null)
         {
             if (unMappedField == null)
             {

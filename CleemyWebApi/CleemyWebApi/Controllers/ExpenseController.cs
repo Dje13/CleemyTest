@@ -20,7 +20,7 @@ namespace CleemyWebApi.Controllers
     public class ExpenseController : Controller
     {
         [HttpPost]
-        public ActionResult CreateExpense(ExpenseDTO expenseDTO)
+        public ActionResult createExpense(ExpenseDTO expenseDTO)
         {
             //DataFactory.AddTicket(ticket);
 
@@ -30,11 +30,11 @@ namespace CleemyWebApi.Controllers
                 return Problem(JsonSerializer.Serialize(listError));
             }
             Expense curExpense = new Expense();
-            ExpenseMapper.MapExpenseFromDTO(expenseDTO, curExpense);
+            ExpenseMapper.mapExpenseFromDTO(expenseDTO, curExpense);
             curExpense = ExpenseService.addExpense(curExpense);
             curExpense = ExpenseService.getExpenseFromId(curExpense.Id);
             ExpenseDTO result = new ExpenseDTO();
-            ExpenseMapper.MapDTOFromExpense(curExpense,result);
+            ExpenseMapper.mapDTOFromExpense(curExpense,result);
 
             return Ok(result);
         }
@@ -42,7 +42,7 @@ namespace CleemyWebApi.Controllers
         
         [HttpGet]
         [ResponseType(typeof(List<ExpenseForListDTO>))]
-        public ActionResult GetExpenses([FromQuery] long userId  , [FromQuery] string sortField = "")
+        public ActionResult getExpenses([FromQuery] long userId  , [FromQuery] string sortField = "")
         {
             List<ExpenseForListDTO> result = new List<ExpenseForListDTO>();
             List<Expense> expenses = ExpenseService.getExpensesForOneUser(userId, sortField);
@@ -50,7 +50,7 @@ namespace CleemyWebApi.Controllers
             foreach (Expense expense in expenses)
             {
                 ExpenseForListDTO expenseForListDTO = new ExpenseForListDTO();
-                ExpenseMapper.MapDTOForListFromExpense(expense, expenseForListDTO);
+                ExpenseMapper.mapDTOForListFromExpense(expense, expenseForListDTO);
                 result.Add(expenseForListDTO);
             }
             return Ok(result);

@@ -7,7 +7,7 @@ namespace CleemyWebApi.DTO
 {
     public class BaseExpenseDTO
     {
-        public long Id { get; set; }
+        public long id { get; set; }
         public DateTime dateExpense { get; set; }
         public string nature { get; set; }
         

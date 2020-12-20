@@ -17,9 +17,9 @@ namespace CleemyWebApi.Mapping
         /// </summary>
         /// <param name="expenseDTO"></param>
         /// <param name="expense"></param>
-        public static void MapExpenseFromDTO(ExpenseDTO expenseDTO, Expense expense)
+        public static void mapExpenseFromDTO(ExpenseDTO expenseDTO, Expense expense)
         {
-            Mapper.MapObject(expenseDTO, expense);
+            Mapper.mapObject(expenseDTO, expense);
 
             LuccaUser curUser = UserService.getUserFromId(expenseDTO.luccaUserId);
             if (curUser  == null)
@@ -48,9 +48,9 @@ namespace CleemyWebApi.Mapping
         /// </summary>
         /// <param name="expense">entity with dependancies</param>
         /// <param name="expenseDTO"></param>
-        public static void MapDTOFromExpense(Expense expense, BaseExpenseDTO expenseDTO)
+        public static void mapDTOFromExpense(Expense expense, BaseExpenseDTO expenseDTO)
         {
-            Mapper.MapObject(expense, expenseDTO,WithId:true);
+            Mapper.mapObject(expense, expenseDTO,WithId:true);
             expenseDTO.currency = expense.Currency.Code;
             expenseDTO.nature = expense.Nature.Name;
         }
@@ -61,9 +61,9 @@ namespace CleemyWebApi.Mapping
         /// </summary>
         /// <param name="expense">entity with dependancies</param>
         /// <param name="expenseDTO"></param>
-        public static void MapDTOForListFromExpense(Expense expense, ExpenseForListDTO expenseDTO)
+        public static void mapDTOForListFromExpense(Expense expense, ExpenseForListDTO expenseDTO)
         {
-            MapDTOFromExpense(expense, expenseDTO);
+            mapDTOFromExpense(expense, expenseDTO);
             expenseDTO.luccaUSer = expense.LuccaUser.FirstName + " " + expense.LuccaUser.LastName;
             expenseDTO.currencyName = expense.Currency.Name;
 
